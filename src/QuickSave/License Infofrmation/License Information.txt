@@ -1,0 +1,38 @@
+This software includes source code from several open source projects
+Legally the license information must be included in distributions of this software
+The license information is as follows
+
+	- Tess4j
+		Apache License 2.0
+		
+	- Ekit
+		GNU Lesser General Public License 2.1
+
+	note that there are some minor changes to these sources
+	The changes are documented in the files where changes were made
+		
+There are also sever libraries used in this software
+Their license information is as follows
+
+	- PDFBox 1.8.2
+		Apache License 2.0
+	
+	- Apache Derby 10.10.1.1
+		Apache License 2.0
+	
+	- Zip4j 1.3.1
+		Apache License 2.0
+	
+	- jna
+		Apache License 2.0
+	
+	- Ghost4j 0.3.1
+		GNU Lesser General Public License 3
+	
+	- swt
+		Eclipse Public License 1.0
+	
+	- jai-imageio
+		Copyright © 2006 Sun Microsystems, Inc.
+	
+Please see the license files for further detail

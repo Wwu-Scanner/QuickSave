@@ -1,0 +1,8 @@
+QuickSave.populateFilmStrip
+QuickSave.MainGui
+QuickSave.PageBuffer
+QuickSave.updateFilmStripImageRotation
+QuickSave.populateFilmStrip$1
+QuickSave.populateFilmStrip$2
+QuickSave.ButtonDelay
+QuickSave.checkFieldsValidity
