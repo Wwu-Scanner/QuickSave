@@ -52,25 +52,24 @@ public class CardHoldersGui extends javax.swing.JFrame {
             jTableCreditCardHolders.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
+                    int row = jTableCreditCardHolders.getSelectedRow();
+                    int column = jTableCreditCardHolders.getSelectedColumn();
 
-                int row = jTableCreditCardHolders.getSelectedRow();
-                int column = jTableCreditCardHolders.getSelectedColumn();
-
-                if (column != 0)
-                {
-                    column = 0;
-                }
-                cellValue[0] = jTableCreditCardHolders.getValueAt(row, column).toString();
-                column++;
-                cellValue[1] = jTableCreditCardHolders.getValueAt(row, column).toString();
-                column++;
-                cellValue[2] = jTableCreditCardHolders.getValueAt(row, column).toString();
-                column++;
-                cellValue[3] = jTableCreditCardHolders.getValueAt(row, column).toString();
-                column++;
-                cellValue[4] = jTableCreditCardHolders.getValueAt(row, column).toString();
-                column++;
-                cellValue[5] = jTableCreditCardHolders.getValueAt(row, column).toString();
+                    if (column != 0)
+                    {
+                        column = 0;
+                    }
+                    cellValue[0] = jTableCreditCardHolders.getValueAt(row, column).toString();
+                    column++;
+                    cellValue[1] = jTableCreditCardHolders.getValueAt(row, column).toString();
+                    column++;
+                    cellValue[2] = jTableCreditCardHolders.getValueAt(row, column).toString();
+                    column++;
+                    cellValue[3] = jTableCreditCardHolders.getValueAt(row, column).toString();
+                    column++;
+                    cellValue[4] = jTableCreditCardHolders.getValueAt(row, column).toString();
+                    column++;
+                    cellValue[5] = jTableCreditCardHolders.getValueAt(row, column).toString();
                 }
             });
         }

@@ -59,7 +59,6 @@ public class Main
     public static String GroupPostDir = "R:\\Accounts Receivable\\PeopleSoft Group Post";
     public static String ACHTransactionsDir = "R:\\ACH Transactions (nonstudent)";
     public static String ExpenseReportsDir = "R:\\Expense Report Scans";
-    
     public static String DatabaseDirectory = null;
     
     //Save file directories
@@ -151,6 +150,7 @@ public class Main
         Settings settings = new Settings();
         settings.RestoreSettings();
         
+        //Shuts down Scansnap script when QuickSave ends
         ShutDownHook hook = new ShutDownHook();
 	Runtime runtime = Runtime.getRuntime(); 
 	runtime.addShutdownHook(hook);

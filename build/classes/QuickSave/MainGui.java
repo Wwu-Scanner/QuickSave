@@ -115,6 +115,7 @@ public final class MainGui extends javax.swing.JFrame {
     public static String manual = "";
     public static int filmStripWidth;
     public static String lastSavedDocumentPath;
+    public int lastCheckNumber;
     
     //These are used to determine the cursor's position within the document preview pane
     static double xCoord;
@@ -1219,11 +1220,6 @@ public final class MainGui extends javax.swing.JFrame {
          });
         
         InputMap ProceedImap = jButtonProceed.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        InputMap LeftImap = jButtonPrev.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        InputMap RightImap = jButtonNext.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        InputMap UpImap = jButtonRotateCW.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        InputMap DownImap = jButtonRotateCCW.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        InputMap DeleteImap = jMenuDeletePage.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
 
         ProceedImap.put(CONTROL_Y_STROKE, "redo_button");
         ProceedImap.put(CONTROL_Z_STROKE, "undo_button");
@@ -1276,7 +1272,7 @@ public final class MainGui extends javax.swing.JFrame {
         if (valid == true)
         {
             Date = Date.replaceAll("/","-");
-            if (!prevDate.equals(Date))
+            if (!prevDate.equals("") || !prevDate.equals(Date))
             {
                 int option =  JOptionPane.showConfirmDialog(rootPane, "The date has changed, do you want to use the new value?", "Date Changed", JOptionPane.YES_NO_OPTION);
                 
@@ -1310,15 +1306,6 @@ public final class MainGui extends javax.swing.JFrame {
             paths[1] = Main.CheckDir + "\\20" + Integer.toString(FiscalYear - 1) + "-" + "20" + Integer.toString(FiscalYear) + " Check Number File" + "\\" + Number.substring(0,3) + "---";
             
             int numberInt = Integer.parseInt(Number);
-            if (numberInt > (prevNumber + 100) && prevNumber > 0)
-            {
-                int keepNumber = JOptionPane.showConfirmDialog(jMenuDocument, "The check number is significantly larger than the previous one.\nDo you want to keep it?","Significant Number Change", JOptionPane.WARNING_MESSAGE, JOptionPane.YES_NO_OPTION);
-                
-                if (keepNumber == JOptionPane.NO_OPTION)
-                {
-                    numberInt = (prevNumber + 1);
-                }
-            }
             String Number2;
             if (numberInt < refNumber)
             {
@@ -1337,7 +1324,21 @@ public final class MainGui extends javax.swing.JFrame {
             jTextFieldC_Name.setText("");
             jTextFieldC_Date.setText(Date);
             jCheckBoxC_Void.setSelected(false);
-            SaveDocument(paths, names);
+            int numberException = 0;
+            if ((lastCheckNumber+1) == Integer.parseInt(Number) || lastCheckNumber == 0) {
+                SaveDocument(paths, names);
+            } else {
+                numberException = JOptionPane.showConfirmDialog(null,"The number for this check is not sequential to the previous one.\n"
+                        + "                                          The number you provided is " + Integer.parseInt(Number) + ", The last check number was " + lastCheckNumber + ".\n Do you want to proceed?", "Number Problem",JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+                switch(numberException) {
+                    case JOptionPane.YES_OPTION:
+                        SaveDocument(paths, names);
+                        break;
+                    case JOptionPane.NO_OPTION:
+                        break;
+                }
+            }
+            lastCheckNumber = Integer.parseInt(Number);
         }
     }
     
@@ -1497,7 +1498,7 @@ public final class MainGui extends javax.swing.JFrame {
             jCheckBoxNewMonth.setSelected(false);
             jCheckBoxCC_Approved.setEnabled(true);
             jComboCC_Names.setEnabled(true);
-            jCheckBoxFiscalEnd.setSelected(false);
+            jCheckBoxFiscalEnd.setSelected(true);
             jComboBoxBusiness.setEnabled(false);
         }
     }
