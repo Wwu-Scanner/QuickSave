@@ -183,10 +183,6 @@ public class Main
             Path newVersion = Paths.get("I:\\Ted\\Programs\\QuickSave\\QuickSaveInstaller.exe");
             BasicFileAttributes currentTime = Files.readAttributes(currentVersion, BasicFileAttributes.class);
             BasicFileAttributes newTime = Files.readAttributes(newVersion, BasicFileAttributes.class);
-            
-            //These two variables were created for testing purposes of the check update functionality of the program
-	    //DateFormat formatterCurrent = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
-            //DateFormat formatterNew = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
 	    Calendar calendarCurrent = Calendar.getInstance();
             Calendar calendarNew = Calendar.getInstance();
 	    calendarCurrent.setTimeInMillis(currentTime.lastAccessTime().toMillis());

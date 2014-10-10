@@ -1325,12 +1325,16 @@ public final class MainGui extends javax.swing.JFrame {
             jTextFieldC_Date.setText(Date);
             jCheckBoxC_Void.setSelected(false);
             int numberException = 0;
-            if ((lastCheckNumber+1) == Integer.parseInt(Number) || lastCheckNumber == 0) {
+            if ((lastCheckNumber+1) == Integer.parseInt(Number) || lastCheckNumber == 0)
+            {
                 SaveDocument(paths, names);
-            } else {
+            }
+            else
+            {
                 numberException = JOptionPane.showConfirmDialog(null,"The number for this check is not sequential to the previous one.\n"
                         + "                                          The number you provided is " + Integer.parseInt(Number) + ", The last check number was " + lastCheckNumber + ".\n Do you want to proceed?", "Number Problem",JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-                switch(numberException) {
+                switch(numberException)
+                {
                     case JOptionPane.YES_OPTION:
                         SaveDocument(paths, names);
                         break;
@@ -1924,6 +1928,7 @@ public final class MainGui extends javax.swing.JFrame {
             }
             deleteDone = true;
         }
+        updateFilmstrip();
     }
     
     //Used to rotate the current previewed page clock wise
@@ -2106,9 +2111,9 @@ public final class MainGui extends javax.swing.JFrame {
                 int dpi = (int)(50*((double)MainGui.filmStripWidth/(double)ref));
                 if (CurrentPage > LastPage)
                 {
-                        LastPage = CurrentPage;
-                        displayedNumber[CurrentPage] = displayedTotal;
-                        pageList[displayedTotal-1] = CurrentPage;
+                    LastPage = CurrentPage;
+                    displayedNumber[CurrentPage] = displayedTotal;
+                    pageList[displayedTotal-1] = CurrentPage;
                     try
                     {
                         model.addElement(new ImageIcon(MainGui.pages.get(CurrentPage).convertToImage(BufferedImage.TYPE_INT_RGB,dpi)));

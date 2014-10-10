@@ -1272,7 +1272,7 @@ public final class MainGui extends javax.swing.JFrame {
         if (valid == true)
         {
             Date = Date.replaceAll("/","-");
-            if (!prevDate.equals("") || !prevDate.equals(Date))
+            if (!prevDate.equals("") && !prevDate.equals(Date))
             {
                 int option =  JOptionPane.showConfirmDialog(rootPane, "The date has changed, do you want to use the new value?", "Date Changed", JOptionPane.YES_NO_OPTION);
                 
@@ -1924,6 +1924,7 @@ public final class MainGui extends javax.swing.JFrame {
             }
             deleteDone = true;
         }
+        updateFilmstrip();
     }
     
     //Used to rotate the current previewed page clock wise
@@ -2106,9 +2107,9 @@ public final class MainGui extends javax.swing.JFrame {
                 int dpi = (int)(50*((double)MainGui.filmStripWidth/(double)ref));
                 if (CurrentPage > LastPage)
                 {
-                        LastPage = CurrentPage;
-                        displayedNumber[CurrentPage] = displayedTotal;
-                        pageList[displayedTotal-1] = CurrentPage;
+                    LastPage = CurrentPage;
+                    displayedNumber[CurrentPage] = displayedTotal;
+                    pageList[displayedTotal-1] = CurrentPage;
                     try
                     {
                         model.addElement(new ImageIcon(MainGui.pages.get(CurrentPage).convertToImage(BufferedImage.TYPE_INT_RGB,dpi)));
