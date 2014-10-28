@@ -153,9 +153,9 @@ public class TextProcessing
             {
                 output = output.replaceAll("l", "1");
             }
-            if (output.contains("I"))
+            if (output.contains("1"))
             {
-                output = output.replaceAll("I", "1");
+                output = output.replaceAll("1", "I");
             }
             if (output.contains("|"))
             {

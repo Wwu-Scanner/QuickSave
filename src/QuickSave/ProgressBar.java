@@ -1,5 +1,6 @@
 /*
 this class contains a gui that displays the progress of a certain task
+It is used primarily for the credit card approval emails
  */
 
 package QuickSave;

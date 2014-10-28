@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Thu Oct 09 11:09:05 PDT 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0148-f619-9951-000018464da0 
+Tue Oct 28 14:58:00 PDT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0149-58c3-ff78-00001b7efd48 
 on database directory \\skynet.local\Home\credit.card\My Documents\QuickSave\QuickSaveDatabse with class loader sun.misc.Launcher$AppClassLoader@765291 
 Loaded from file:/I:/Ted/Programs/QuickSave/NetBeansProject/QuickSave/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -12,8 +12,8 @@ os.version=6.1
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Oct 09 11:09:06 PDT 2014: Shutting down Derby engine
+Tue Oct 28 14:58:01 PDT 2014: Shutting down Derby engine
 ----------------------------------------------------------------
-Thu Oct 09 11:09:06 PDT 2014:
-Shutting down instance a816c00e-0148-f619-9951-000018464da0 on database directory \\skynet.local\Home\credit.card\My Documents\QuickSave\QuickSaveDatabse with class loader sun.misc.Launcher$AppClassLoader@765291 
+Tue Oct 28 14:58:01 PDT 2014:
+Shutting down instance a816c00e-0149-58c3-ff78-00001b7efd48 on database directory \\skynet.local\Home\credit.card\My Documents\QuickSave\QuickSaveDatabse with class loader sun.misc.Launcher$AppClassLoader@765291 
 ----------------------------------------------------------------

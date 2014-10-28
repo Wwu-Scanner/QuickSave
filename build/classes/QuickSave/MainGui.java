@@ -1325,20 +1325,25 @@ public final class MainGui extends javax.swing.JFrame {
             jTextFieldC_Date.setText(Date);
             jCheckBoxC_Void.setSelected(false);
             int numberException = 0;
-            if ((lastCheckNumber+1) == Integer.parseInt(Number) || lastCheckNumber == 0) {
+            if ((lastCheckNumber+1) == Integer.parseInt(Number) || lastCheckNumber == 0)
+            {
                 SaveDocument(paths, names);
-            } else {
+            }
+            else
+            {
                 numberException = JOptionPane.showConfirmDialog(null,"The number for this check is not sequential to the previous one.\n"
                         + "                                          The number you provided is " + Integer.parseInt(Number) + ", The last check number was " + lastCheckNumber + ".\n Do you want to proceed?", "Number Problem",JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-                switch(numberException) {
+                switch(numberException)
+                {
                     case JOptionPane.YES_OPTION:
                         SaveDocument(paths, names);
+                        lastCheckNumber = Integer.parseInt(Number);
                         break;
                     case JOptionPane.NO_OPTION:
                         break;
                 }
             }
-            lastCheckNumber = Integer.parseInt(Number);
+            
         }
     }
     
@@ -1498,7 +1503,7 @@ public final class MainGui extends javax.swing.JFrame {
             jCheckBoxNewMonth.setSelected(false);
             jCheckBoxCC_Approved.setEnabled(true);
             jComboCC_Names.setEnabled(true);
-            jCheckBoxFiscalEnd.setSelected(true);
+            jCheckBoxFiscalEnd.setSelected(false);
             jComboBoxBusiness.setEnabled(false);
         }
     }

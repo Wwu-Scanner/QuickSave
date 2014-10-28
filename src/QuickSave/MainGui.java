@@ -1337,12 +1337,13 @@ public final class MainGui extends javax.swing.JFrame {
                 {
                     case JOptionPane.YES_OPTION:
                         SaveDocument(paths, names);
+                        lastCheckNumber = Integer.parseInt(Number);
                         break;
                     case JOptionPane.NO_OPTION:
                         break;
                 }
             }
-            lastCheckNumber = Integer.parseInt(Number);
+            
         }
     }
     
@@ -1502,7 +1503,7 @@ public final class MainGui extends javax.swing.JFrame {
             jCheckBoxNewMonth.setSelected(false);
             jCheckBoxCC_Approved.setEnabled(true);
             jComboCC_Names.setEnabled(true);
-            jCheckBoxFiscalEnd.setSelected(true);
+            jCheckBoxFiscalEnd.setSelected(false);
             jComboBoxBusiness.setEnabled(false);
         }
     }

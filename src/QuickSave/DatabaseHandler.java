@@ -1,5 +1,5 @@
 /*
-This class is used to intereact with a database. It has methods with
+This class is used to interact with a database. It has methods with
 predefined queries to pull data from tables as well as methods to store data
 to tables.
 */

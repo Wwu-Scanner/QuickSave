@@ -1,2 +1,0 @@
-QuickSave.Table
-QuickSave.DatabaseHandler

@@ -92,7 +92,7 @@ public class CardApproversGui extends javax.swing.JFrame {
                 ((DefaultTableModel) jTableCreditCardApprovers.getModel()).removeRow(0);
             }
             
-            //Creating Object []rowData for jTable's Table Model        
+            //Creating Object[] rowData for jTable's Table Model        
             int columns = DatabaseHandler.ca.columnCount();
             while (DatabaseHandler.ca.Next())
             {  

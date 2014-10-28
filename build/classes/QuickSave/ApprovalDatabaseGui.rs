@@ -1,2 +1,0 @@
-QuickSave.sendEmails
-QuickSave.ApprovalDatabaseGui

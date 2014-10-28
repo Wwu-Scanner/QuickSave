@@ -1,3 +1,8 @@
+/*
+This class contains the gui for the check fields that are used to read
+the check information
+*/
+
 package QuickSave;
 
 public class FieldsGui extends javax.swing.JFrame {
@@ -73,6 +78,7 @@ public class FieldsGui extends javax.swing.JFrame {
         }
     }
 
+    //Loads the field data from MainGui
     private void load()
     {
         loading = true;
@@ -153,6 +159,7 @@ public class FieldsGui extends javax.swing.JFrame {
         loading = false;
     }
     
+    //Refreshes the fields with the updated information from this class
     private void refresh()
     {
         if(loading == false)

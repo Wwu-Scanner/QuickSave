@@ -31,7 +31,6 @@ public class ConflictHandler extends javax.swing.JFrame {
     
     //Initializes the GUI
     public void ConflictHandler(String CName, String CPathString) {
-
         Path = Paths.get(CPathString + "\\" + CName + ".pdf");
         Name = CName;
         PathString = CPathString;

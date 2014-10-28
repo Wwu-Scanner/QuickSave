@@ -176,7 +176,7 @@ public class Main
          
         loadCardHolders();
         
-        //Check to see is there is an update for the program
+        //Check to see if there is an update for the program
         if (MainGui.jCheckBoxMenuCheckupdate.getState() == true)
         {
             Path currentVersion = Paths.get("C:\\Program Files (x86)\\QuickSave\\QuickSave.exe");
@@ -217,6 +217,7 @@ public class Main
         }
     }
     
+    //When called this function ends the scansnap script.
     public static void stopScanSnapAutomation()
     {
         if (p != null)
@@ -473,7 +474,7 @@ class ShutDownHook extends Thread
     }
 }
 
-//Used if there a need to pause the program
+//Used if there is a need to pause the program
 class wait extends Thread
 {
     public static boolean length(long len)

@@ -74,6 +74,8 @@ public static DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
             max = index;
             db.closeDatabase();
             
+            //This method is run twice here in order to hide certain columns
+            // in the table. Why that is achieved by this running twice is unclear
             sqlManager();
             sqlManager();
             setVisible(true);
