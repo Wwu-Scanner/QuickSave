@@ -287,6 +287,7 @@ public class Main
 }
 
 // Constantly checks to see if a document exists in the temp folder, and opens it if one does exist
+// This class is only used with the scansnap scanner.
 class tempChecker extends Thread
 {
     @Override

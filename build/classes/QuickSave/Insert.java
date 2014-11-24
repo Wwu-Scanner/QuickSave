@@ -1,5 +1,7 @@
 /*
 This class contains a gui for inserting existing pdfs into the loaded document
+Also take note that this class takes time to process so be assured that when it
+is active the pdfs will be merged. The larger the doucment the longer it takes.
  */
 
 package QuickSave;

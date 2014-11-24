@@ -86,6 +86,7 @@ public class EditCardHolderGui extends javax.swing.JFrame {
             db.closeDatabase();
             CardHoldersGui.sqlManager();
             CardHoldersGui.updateModificationDate();
+            JOptionPane.showMessageDialog(rootPane, "If you changed the approval for a card holder you will\n also need to change it in the approval database gui\n assuming the card holder has a statement for the specified month.", "Change Approver", JOptionPane.INFORMATION_MESSAGE);
             OpenFlag = false;
             dispose();
         }

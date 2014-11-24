@@ -233,8 +233,9 @@ public final class MainGui extends javax.swing.JFrame {
                 }
             }
         });
-        
+        // Set the filmstrip scroll position to the first item
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(25);
+        // Activates the key bindings
         BindKeys();
         SetDocumentType(SelectedDocumentType);
         jScrollFilmStrip.setVisible(showFilmStrip);
@@ -279,7 +280,7 @@ public final class MainGui extends javax.swing.JFrame {
         }     
     }
     
-    //Creates a menu in the taskbar
+    //Creates a menu in the taskbar that is accessible by right clicking the icon
     void createTrayMenu()
     {
         //Check the SystemTray is supported
@@ -313,7 +314,6 @@ public final class MainGui extends javax.swing.JFrame {
        
         //Create the popup menu
         trayIcon.setPopupMenu(popup);
-       
         autoHideItem.setState(autoHideToTray);
         exitHideItem.setState(hideOnExit);
         
@@ -325,13 +325,13 @@ public final class MainGui extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null,"The tray icon could not be added","Icon error",1);
         }
-        
+        // Create a function that reacts to the curser
         MouseListener ml;
         ml = new MouseListener()
         {
             @Override
             public void mouseClicked(MouseEvent e)
-            {               
+            {          
             }
 
             @Override
@@ -343,7 +343,7 @@ public final class MainGui extends javax.swing.JFrame {
             public void mouseExited(MouseEvent e)
             {
             }
-
+            
             @Override
             public void mousePressed(MouseEvent e)
             {
@@ -356,10 +356,11 @@ public final class MainGui extends javax.swing.JFrame {
             {
             }
         };
+        // Add the mouse listener to the tray icon
         trayIcon.addMouseListener(ml);
         
         trayIcon.addActionListener(new ActionListener()
-        {  
+        {
             @Override
             public void actionPerformed(ActionEvent e)
             {  
@@ -368,7 +369,7 @@ public final class MainGui extends javax.swing.JFrame {
         });
         
         openItem.addActionListener(new ActionListener()
-        {  
+        {
             @Override
             public void actionPerformed(ActionEvent e)
             {  
@@ -377,7 +378,7 @@ public final class MainGui extends javax.swing.JFrame {
         });
         
         hideItem.addActionListener(new ActionListener()
-        {  
+        {
             @Override
             public void actionPerformed(ActionEvent e)
             {  
@@ -406,9 +407,9 @@ public final class MainGui extends javax.swing.JFrame {
                 jCheckBoxHideOnExit.setSelected(hideOnExit);
             }  
         });
-        
+        // Acesses the help menu
         helpItem.addActionListener(new ActionListener()
-        {  
+        {
             @Override
             public void actionPerformed(ActionEvent e)
             {  
@@ -423,9 +424,9 @@ public final class MainGui extends javax.swing.JFrame {
                 }
             }  
         });
-        
+        // Exits the program
         exitItem.addActionListener(new ActionListener()
-        {  
+        {
             @Override
             public void actionPerformed(ActionEvent e)
             {  
@@ -623,13 +624,13 @@ public final class MainGui extends javax.swing.JFrame {
                 {
                     int ref = pages.get(CurrentPage).convertToImage(BufferedImage.TYPE_INT_RGB,50).getWidth();
                     int dpi = (int)(50*((double)filmStripWidth/(double)ref));
-                    
+                    // Creates the base image and dimensions for the filmstrip icons
                     BufferedImage base = pages.get(CurrentPage).convertToImage(BufferedImage.TRANSLUCENT,dpi);
                     int width = base.getWidth();
                     int height = base.getHeight();
                     BufferedImage overlay = new BufferedImage(width,height,BufferedImage.TRANSLUCENT);
                     BufferedImage combined = new BufferedImage(width,height,BufferedImage.TRANSLUCENT);
-                    
+                    // Create the buffered image and draw to it 
                     Graphics g = overlay.createGraphics();
                     g.setColor(new Color(0,0,20,200));
                     if (!deselecting)
@@ -700,7 +701,7 @@ public final class MainGui extends javax.swing.JFrame {
                         ReadCheck();
                         firstRun = false;
                     }
-
+                    // Set the size of the overlay image and create the graphics for it
                     BufferedImage overlay = new BufferedImage(w_o,h_o,BufferedImage.TYPE_INT_ARGB);
                     int mainWidth = jLabelImage.getWidth();
                     int mainHeight = jLabelImage.getHeight();
@@ -779,9 +780,9 @@ public final class MainGui extends javax.swing.JFrame {
                         if (xCoord > widthDifference && yCoord > heightDifference)
                         {
                             if (scaledXCoord > numberArea[0] && 
-                                    scaledYCoord > numberArea[1] &&
-                                    scaledXCoord < numberArea[2] + numberArea[0] &&
-                                    scaledYCoord < numberArea[3] + numberArea[1])
+                                scaledYCoord > numberArea[1] &&
+                                scaledXCoord < numberArea[2] + numberArea[0] &&
+                                scaledYCoord < numberArea[3] + numberArea[1])
                             {
                                 xOffset = scaledXCoord - numberArea[0];
                                 yOffset = scaledYCoord - numberArea[1];
@@ -1745,6 +1746,8 @@ public final class MainGui extends javax.swing.JFrame {
                 }
                 jTextFieldACH_Number.setText("");
                 SaveDocument(paths, names);
+                FlaggedPages.clear();
+                ExpenseNames.clear();
             }
         }
     }

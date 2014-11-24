@@ -250,7 +250,8 @@ public static DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         List sortKeys = jTableApprovals.getRowSorter().getSortKeys();
         sqlManager();
         jTableApprovals.getRowSorter().setSortKeys(sortKeys);
-    return null;
+        JOptionPane.showMessageDialog(rootPane, "If you changed the approval for a card holder you will\n also need to change it in the cardholder database gui.", "Change Approver", JOptionPane.INFORMATION_MESSAGE);
+        return null;
     }
     
     // gathers data from the database and populates the table with it
